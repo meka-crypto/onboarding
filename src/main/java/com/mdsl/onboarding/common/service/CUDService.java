@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
+// Common CUD services
 public interface CUDService<MOD extends BaseEntity, REQ, R extends JpaRepository<MOD, Long>> {
     Class getModelClass();
 

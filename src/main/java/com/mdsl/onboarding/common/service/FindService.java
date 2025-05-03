@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.util.List;
 import java.util.Optional;
 
+// Common Find Services
 public interface FindService<MOD extends BaseEntity, R extends JpaRepository<MOD, Long> & JpaSpecificationExecutor<MOD>> {
     R getRepository();
 

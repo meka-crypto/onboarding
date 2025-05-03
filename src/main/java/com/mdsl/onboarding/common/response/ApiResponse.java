@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
 
+// Custom Structured ResponseEntity
 @Getter
 public class ApiResponse<T> extends ResponseEntity<ApiResponse.Body<T>> {
 

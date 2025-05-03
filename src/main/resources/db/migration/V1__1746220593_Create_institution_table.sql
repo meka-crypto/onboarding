@@ -5,4 +5,4 @@ CREATE TABLE public.institution (
     status INTEGER NOT NULL
 );
 
-ALTER TABLE institution ADD CONSTRAINT uq_institution_code UNIQUE (code);
+ALTER TABLE public.institution ADD CONSTRAINT uq_institution_code UNIQUE (code);

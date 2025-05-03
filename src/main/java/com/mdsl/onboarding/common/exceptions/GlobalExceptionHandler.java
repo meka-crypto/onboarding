@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.Arrays;
 
+// Class to handle Exceptions on Controllers level
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {

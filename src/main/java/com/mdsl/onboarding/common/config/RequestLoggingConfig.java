@@ -14,7 +14,8 @@ public class RequestLoggingConfig {
         filter.setIncludePayload(false);
         filter.setIncludeHeaders(false);
         filter.setMaxPayloadLength(10000);
-        filter.setAfterMessagePrefix("Incoming Request: ");
+        filter.setBeforeMessagePrefix("Before Request: ");
+        filter.setAfterMessagePrefix("After Request: ");
         return filter;
     }
 }

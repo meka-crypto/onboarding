@@ -17,6 +17,7 @@ public class CommonUtils {
         CommonUtils.modelMapper = modelMapper;
     }
 
+    // Map List<S> to List<D>
     public static <S, D> List<D> mapList(List<S> sourceList, Class<D> destinationClass) {
         return sourceList.stream()
                 .map(source -> modelMapper.map(source, destinationClass))

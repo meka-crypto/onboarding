@@ -7,7 +7,9 @@ import com.mdsl.onboarding.insitution.dtos.InstitutionRequestDTO;
 import com.mdsl.onboarding.insitution.dtos.InstitutionResponseDTO;
 import com.mdsl.onboarding.insitution.models.Institution;
 import com.mdsl.onboarding.insitution.services.InstitutionService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/institution")
+@Tag(name = "Institution", description = "Institution Apis")
+@Slf4j
 public class InstitutionController {
 
     private final InstitutionService institutionService;
@@ -25,9 +29,13 @@ public class InstitutionController {
     public ApiResponse<InstitutionResponseDTO> createOrUpdate(@RequestBody InstitutionRequestDTO institutionRequestDTO) throws CustomServiceException {
         Institution institution;
         if (institutionRequestDTO.getId() == null || institutionRequestDTO.getId() == 0) {
+            log.debug("creating new Institution");
             institutionRequestDTO.setId(null);
             institution = institutionService.saveNew(institutionRequestDTO);
-        } else institution = institutionService.patchUpdate(institutionRequestDTO.getId(), institutionRequestDTO);
+        } else {
+            log.debug("updating existing Institution");
+            institution = institutionService.patchUpdate(institutionRequestDTO.getId(), institutionRequestDTO);
+        }
         return ApiResponse.success(modelMapper.map(institution, InstitutionResponseDTO.class), true);
     }
 
@@ -39,6 +47,7 @@ public class InstitutionController {
     @DeleteMapping("/{id}")
     public ApiResponse deleteById(@PathVariable("id") Long id) throws CustomServiceException {
         institutionService.delete(id);
+        log.debug("Institution with id {} deleted", id);
         return ApiResponse.success(true);
     }
 
