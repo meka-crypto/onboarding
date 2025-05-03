@@ -84,12 +84,12 @@ src/
 │   │                  ├── models/      # Tables
 │   │              └── security/     # Security configuration
 │   │                  ├── config/       # Configuration classes
-|   |                  ├── controllers/       # Rest Controllers for users and authentication
-│   │                  ├── repositories/      # Database Repositories
-│   │                  ├── models/       # Tables
-│   │                  ├── services/      # Security Functionalities
-│   │                  ├── utils/       # Utils
-|   |                  ├── dtos/        # Data transfer objects
+|   |                  ├── controllers/       # Rest Controllers for users and authentication                                             
+│   │                  ├── repositories/      # Database Repositories                                                              
+│   │                  ├── models/       # Tables                                                 
+│   │                  ├── services/      # Security Functionalities                                                  
+│   │                  ├── utils/       # Utils                                                       
+|   |                  ├── dtos/        # Data transfer objects                                                              
 |   |                  ├── AuthEntryPointJwt.java  
 |   |                  └── AuthTokenFilter.java
 │   │              └── OnboardingApplication.java
