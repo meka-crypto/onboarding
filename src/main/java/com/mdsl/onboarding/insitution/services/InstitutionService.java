@@ -4,7 +4,7 @@ import com.mdsl.onboarding.common.service.CUDService;
 import com.mdsl.onboarding.common.service.FindService;
 import com.mdsl.onboarding.insitution.dtos.InstitutionRequestDTO;
 import com.mdsl.onboarding.insitution.models.Institution;
-import com.mdsl.onboarding.insitution.repository.InstitutionRepository;
+import com.mdsl.onboarding.insitution.repositories.InstitutionRepository;
 
 import java.util.List;
 

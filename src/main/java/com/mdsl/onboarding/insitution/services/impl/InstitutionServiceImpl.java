@@ -1,7 +1,7 @@
 package com.mdsl.onboarding.insitution.services.impl;
 
 import com.mdsl.onboarding.insitution.models.Institution;
-import com.mdsl.onboarding.insitution.repository.InstitutionRepository;
+import com.mdsl.onboarding.insitution.repositories.InstitutionRepository;
 import com.mdsl.onboarding.insitution.services.InstitutionService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
