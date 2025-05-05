@@ -42,13 +42,9 @@ public class UserController {
 
         // Set user status and encrypt password
         userRequestDTO.setStatus(Status.ENABLED);
-        userRequestDTO.setUsername(userRequestDTO.getUsername()); // This line is redundant but kept for clarity
         userRequestDTO.setPassword(encoder.encode(userRequestDTO.getPassword()));
 
-        // Save new user
         userService.saveNew(userRequestDTO);
-
-        // Return success response
         return ApiResponse.created("User registered successfully!", "success", true);
     }
 }

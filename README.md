@@ -39,9 +39,106 @@ Click the "Authorize" button in Swagger UI
 
 Enter: Bearer your.jwt.token.here
 
-Add, update, delete, and get institutions 
 
-Users granted permissions can be created at /user
+
+# API Endpoints
+Institution Endpoints
+
+* Create or Update Institution
+Endpoint: /institution
+Method: POST
+Description: Creates a new institution or Update existing one.
+Request Body:
+    {   
+        "id" : 1,
+        "code": 123456,
+        "name": "Institution Name",
+        "status": 1
+    }
+
+Response:
+    {
+        "valid": true,
+        "message": "success",
+        "data": {   
+                    "id" : 1,
+                    "code": 123456,
+                    "name": "Institution Name",
+                    "status": 1
+                },
+        "timestamp": "2025-05-05T19:43:36.455"
+    }
+
+* Get Institution
+Endpoint: /institution/{id}
+Method: GET
+Description: Retrieves an institution by ID.
+
+Response:
+    {
+        "valid": true,
+        "message": "success",
+        "data": {   
+            "id" : 1,
+            "code": 123456,
+            "name": "Institution Name",
+            "status": 1
+        },
+        "timestamp": "2025-05-05T19:43:36.455"
+    }
+
+* Get All Institutions
+Endpoint: /institution
+Method: GET
+Description: Retrieves all institutions.
+
+Response:
+    {
+        "valid": true,
+        "message": "success",
+        "data": [
+            {
+                "id": 1,
+                "code": 123456,
+                "name": "Institution Name",
+                "status": 1
+            }
+        ],
+        "timestamp": "2025-05-05T19:43:53.845"
+    }
+
+* Delete Institution
+Endpoint: /institution/{id}
+Method: DELETE
+Description: Deletes an institution by ID.
+Response:
+    {
+        "valid": true,
+        "message": "success",
+        "data": null,
+        "timestamp": "2025-05-05T19:43:53.845"
+    }
+
+# User Endpoints
+* Create User
+Endpoint: /user
+
+Method: POST
+Description: Creates a new user.
+Request Body:
+    {
+        "username": "newuser",
+        "password": "userpassword"
+    }
+
+Response:
+    {
+        "valid": true,
+        "message": "success",
+        "data": "User registered successfully!",
+        "timestamp": "2025-05-05T19:43:53.845"
+    }
+
 
 Database Schema
 The application uses these main tables:
