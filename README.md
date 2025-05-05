@@ -39,10 +39,7 @@ Click the "Authorize" button in Swagger UI
 
 Enter: Bearer your.jwt.token.here
 
-
-
-# API Endpoints
-Institution Endpoints
+# Institution Endpoints
 
 * Create or Update Institution
 Endpoint: /institution
