@@ -1,4 +1,4 @@
-package com.mdsl.onboarding.insitution.models;
+package com.mdsl.onboarding.institution.models;
 
 import com.mdsl.onboarding.common.BaseEntity;
 import jakarta.persistence.*;

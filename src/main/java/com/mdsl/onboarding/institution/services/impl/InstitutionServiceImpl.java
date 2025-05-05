@@ -1,10 +1,10 @@
-package com.mdsl.onboarding.insitution.services.impl;
+package com.mdsl.onboarding.institution.services.impl;
 
 import com.mdsl.onboarding.common.exceptions.CustomServiceException;
-import com.mdsl.onboarding.insitution.dtos.InstitutionRequestDTO;
-import com.mdsl.onboarding.insitution.models.Institution;
-import com.mdsl.onboarding.insitution.repositories.InstitutionRepository;
-import com.mdsl.onboarding.insitution.services.InstitutionService;
+import com.mdsl.onboarding.institution.dtos.InstitutionRequestDTO;
+import com.mdsl.onboarding.institution.models.Institution;
+import com.mdsl.onboarding.institution.repositories.InstitutionRepository;
+import com.mdsl.onboarding.institution.services.InstitutionService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;

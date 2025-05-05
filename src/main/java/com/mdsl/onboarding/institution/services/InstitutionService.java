@@ -1,11 +1,11 @@
-package com.mdsl.onboarding.insitution.services;
+package com.mdsl.onboarding.institution.services;
 
 import com.mdsl.onboarding.common.exceptions.CustomServiceException;
 import com.mdsl.onboarding.common.service.CUDService;
 import com.mdsl.onboarding.common.service.FindService;
-import com.mdsl.onboarding.insitution.dtos.InstitutionRequestDTO;
-import com.mdsl.onboarding.insitution.models.Institution;
-import com.mdsl.onboarding.insitution.repositories.InstitutionRepository;
+import com.mdsl.onboarding.institution.dtos.InstitutionRequestDTO;
+import com.mdsl.onboarding.institution.models.Institution;
+import com.mdsl.onboarding.institution.repositories.InstitutionRepository;
 
 import java.util.List;
 

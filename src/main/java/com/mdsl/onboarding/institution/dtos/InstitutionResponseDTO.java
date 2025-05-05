@@ -1,4 +1,4 @@
-package com.mdsl.onboarding.insitution.dtos;
+package com.mdsl.onboarding.institution.dtos;
 
 import com.mdsl.onboarding.common.enums.Status;
 import lombok.AllArgsConstructor;

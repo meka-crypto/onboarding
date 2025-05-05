@@ -1,11 +1,11 @@
-package com.mdsl.onboarding.insitution.controllers;
+package com.mdsl.onboarding.institution.controllers;
 
 import com.mdsl.onboarding.common.exceptions.CustomServiceException;
 import com.mdsl.onboarding.common.response.ApiResponse;
 import com.mdsl.onboarding.common.utils.CommonUtils;
-import com.mdsl.onboarding.insitution.dtos.InstitutionRequestDTO;
-import com.mdsl.onboarding.insitution.dtos.InstitutionResponseDTO;
-import com.mdsl.onboarding.insitution.services.InstitutionService;
+import com.mdsl.onboarding.institution.dtos.InstitutionRequestDTO;
+import com.mdsl.onboarding.institution.dtos.InstitutionResponseDTO;
+import com.mdsl.onboarding.institution.services.InstitutionService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

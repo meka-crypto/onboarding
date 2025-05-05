@@ -1,6 +1,6 @@
-package com.mdsl.onboarding.insitution.repositories;
+package com.mdsl.onboarding.institution.repositories;
 
-import com.mdsl.onboarding.insitution.models.Institution;
+import com.mdsl.onboarding.institution.models.Institution;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
