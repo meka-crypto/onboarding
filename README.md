@@ -37,7 +37,7 @@ First obtain a JWT token from the /auth/get-access-token
 
 Click the "Authorize" button in Swagger UI
 
-Enter: Bearer your.jwt.token.here
+Enter: your.jwt.token.here
 
 # API Endpoints
 

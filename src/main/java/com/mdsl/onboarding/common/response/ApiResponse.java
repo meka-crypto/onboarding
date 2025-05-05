@@ -13,7 +13,7 @@ import java.time.temporal.ChronoUnit;
 public class ApiResponse<T> extends ResponseEntity<ApiResponse.Body<T>> {
 
     public ApiResponse(HttpStatus status, String message, T data, boolean valid, String stackTrace, Integer errorCode) {
-        super(new Body<>(valid, message, data, LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS), errorCode, stackTrace), status);
+        super(new Body<>(valid, message, data, LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS).toString(), errorCode, stackTrace), status);
     }
 
     public static <T> ApiResponse<T> success(T data, boolean valid) {
@@ -37,13 +37,13 @@ public class ApiResponse<T> extends ResponseEntity<ApiResponse.Body<T>> {
         private final boolean valid;
         private final String message;
         private final T data;
-        private final LocalDateTime timestamp;
+        private final String timestamp;
         @JsonInclude(JsonInclude.Include.NON_NULL) // include if not null
         private final Integer errorCode;
         @JsonInclude(JsonInclude.Include.NON_EMPTY) // include if not empty
         private final String stackTrace;
 
-        public Body(boolean valid, String message, T data, LocalDateTime timestamp, Integer errorCode, String stackTrace) {
+        public Body(boolean valid, String message, T data, String timestamp, Integer errorCode, String stackTrace) {
             this.valid = valid;
             this.message = message;
             this.data = data;
