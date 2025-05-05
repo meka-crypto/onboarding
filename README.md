@@ -106,6 +106,26 @@ Response:
         "timestamp": "2025-05-05T19:43:53.845"
     }
 
+### Get All Active Institutions
+Endpoint: /institution/get-active
+Method: GET
+Description: Retrieves all institutions with status 1 "ENABLED".
+
+Response:
+    {
+        "valid": true,
+        "message": "success",
+        "data": [
+            {
+                "id": 1,
+                "code": 123456,
+                "name": "Institution Name",
+                "status": 1
+            }
+        ],
+        "timestamp": "2025-05-05T19:43:53.845"
+    }
+
 ### Delete Institution
 Endpoint: /institution/{id}
 Method: DELETE
