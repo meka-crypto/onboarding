@@ -39,9 +39,11 @@ Click the "Authorize" button in Swagger UI
 
 Enter: Bearer your.jwt.token.here
 
-# Institution Endpoints
+# API Endpoints
 
-* Create or Update Institution
+## Institution Endpoints
+
+### Create or Update Institution
 Endpoint: /institution
 Method: POST
 Description: Creates a new institution or Update existing one.
@@ -66,7 +68,7 @@ Response:
         "timestamp": "2025-05-05T19:43:36.455"
     }
 
-* Get Institution
+### Get Institution
 Endpoint: /institution/{id}
 Method: GET
 Description: Retrieves an institution by ID.
@@ -84,7 +86,7 @@ Response:
         "timestamp": "2025-05-05T19:43:36.455"
     }
 
-* Get All Institutions
+### Get All Institutions
 Endpoint: /institution
 Method: GET
 Description: Retrieves all institutions.
@@ -104,7 +106,7 @@ Response:
         "timestamp": "2025-05-05T19:43:53.845"
     }
 
-* Delete Institution
+### Delete Institution
 Endpoint: /institution/{id}
 Method: DELETE
 Description: Deletes an institution by ID.
@@ -116,8 +118,8 @@ Response:
         "timestamp": "2025-05-05T19:43:53.845"
     }
 
-# User Endpoints
-* Create User
+## User Endpoints
+### Create User
 Endpoint: /user
 
 Method: POST
@@ -155,7 +157,7 @@ CREATE TABLE public.user (
     status INTEGER NOT NULL
 );
 
-Project Structure
+# Project Structure
 src/
 ├── main/
 │   ├── java/
@@ -194,6 +196,7 @@ src/
 │       └── application.properties
 └── test/        # Test classes
 
+# Notes:
 This README provides:
 - Clear setup instructions
 - API documentation details
