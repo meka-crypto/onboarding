@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.Optional;
 
+/**
+ * Custom implementation of Spring Security's UserDetailsService.
+ * This service is used during authentication to load user-specific data.
+ */
 @Service
 @RequiredArgsConstructor
 public class CustomUserDetailsService  implements UserDetailsService {

@@ -6,13 +6,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 // Custom Structured ResponseEntity
 @Getter
 public class ApiResponse<T> extends ResponseEntity<ApiResponse.Body<T>> {
 
     public ApiResponse(HttpStatus status, String message, T data, boolean valid, String stackTrace, Integer errorCode) {
-        super(new Body<>(valid, message, data, LocalDateTime.now(), errorCode, stackTrace), status);
+        super(new Body<>(valid, message, data, LocalDateTime.now().truncatedTo(ChronoUnit.MILLIS), errorCode, stackTrace), status);
     }
 
     public static <T> ApiResponse<T> success(T data, boolean valid) {
@@ -37,9 +38,9 @@ public class ApiResponse<T> extends ResponseEntity<ApiResponse.Body<T>> {
         private final String message;
         private final T data;
         private final LocalDateTime timestamp;
-        @JsonInclude(JsonInclude.Include.NON_NULL)
+        @JsonInclude(JsonInclude.Include.NON_NULL) // include if not null
         private final Integer errorCode;
-        @JsonInclude(JsonInclude.Include.NON_EMPTY)
+        @JsonInclude(JsonInclude.Include.NON_EMPTY) // include if not empty
         private final String stackTrace;
 
         public Body(boolean valid, String message, T data, LocalDateTime timestamp, Integer errorCode, String stackTrace) {

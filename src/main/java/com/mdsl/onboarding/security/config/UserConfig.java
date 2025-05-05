@@ -26,6 +26,7 @@ public class UserConfig {
     @Value("${user.admin.password}")
     private String adminUserPassword;
 
+    // Define default admin user
     @Bean
     public User addAdmin() throws CustomServiceException {
         Optional<User> admin = userService.findByUsername(adminUserUsername);

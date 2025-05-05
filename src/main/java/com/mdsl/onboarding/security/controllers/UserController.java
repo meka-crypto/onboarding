@@ -13,25 +13,42 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller responsible for managing user-related operations.
+ */
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
-@Tag(name = "User", description = "User Apis")
+@Tag(name = "User", description = "User APIs")
 public class UserController {
 
     private final UserService userService;
     private final PasswordEncoder encoder;
 
+    /**
+     * Registers a new user.
+     *
+     * @param userRequestDTO a DTO containing new user information such as username and password
+     * @return ApiResponse with success message if registration is successful
+     * @throws CustomServiceException if an internal error occurs during registration
+     * This endpoint hashes the password using BCrypt before saving
+     */
     @PostMapping()
-    public ApiResponse<String> registerUser(@RequestBody UserRequestDTO user) throws CustomServiceException {
-        if (userService.existsByUsername(user.getUsername())) {
+    public ApiResponse<String> registerUser(@RequestBody UserRequestDTO userRequestDTO) throws CustomServiceException {
+        // Check if username is already taken
+        if (userService.existsByUsername(userRequestDTO.getUsername())) {
             return ApiResponse.success("Error: Username is already taken!", true);
         }
-        // Create new user
-        user.setStatus(Status.ENABLED);
-        user.setUsername(user.getUsername());
-        user.setPassword(encoder.encode(user.getPassword()));
-        userService.saveNew(user);
+
+        // Set user status and encrypt password
+        userRequestDTO.setStatus(Status.ENABLED);
+        userRequestDTO.setUsername(userRequestDTO.getUsername()); // This line is redundant but kept for clarity
+        userRequestDTO.setPassword(encoder.encode(userRequestDTO.getPassword()));
+
+        // Save new user
+        userService.saveNew(userRequestDTO);
+
+        // Return success response
         return ApiResponse.created("User registered successfully!", "success", true);
     }
 }

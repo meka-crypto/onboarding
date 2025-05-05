@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.SQLDelete;
 import org.hibernate.validator.constraints.Length;
 
 @Entity
@@ -16,7 +15,7 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "institution", schema = "public")
-@SQLDelete(sql = "UPDATE public.institution SET status = 0 WHERE id = ?")
+//@SQLDelete(sql = "UPDATE public.institution SET status = 0 WHERE id = ?")  soft delete upon requirement
 public class Institution extends BaseEntity {
 
     @NotNull(message = "code cannot be null")

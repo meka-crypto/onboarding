@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
+// Common BaseEntity structure to be extended
+// by entity classes
 @MappedSuperclass
 @Getter
 @Setter
